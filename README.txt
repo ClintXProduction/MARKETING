@@ -1,0 +1,12 @@
+CLTX4 Marketplace v6
+- WhatsApp removed.
+- Inquiry opens contact/payment choices.
+- Email inquiry uses mailto and pre-fills recipient, subject, product, price and selected items.
+- GCash QR + number.
+- PayPal email + copy button + email inquiry.
+- Messenger/Facebook links configured.
+- TikTok @cltx4_production configured.
+- Cart persists in the browser.
+- Copy-to-clipboard buttons and toast notifications.
+- Cyber scanline/live status styling.
+- Instagram link still needs its actual URL for direct linking.

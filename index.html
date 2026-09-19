@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLTX4 Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><b>CLTX4</b><small>MARKETPLACE</small></div>
+  <button id="cartBtn" class="ghost">🛒 <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section class="hero">
+  <p class="tag">ELECTRONICS • DIY • TECH</p>
+  <h1>CLTX4<br><span>MARKETPLACE</span></h1>
+  <p>Browse electronics, components and tech gear.</p><div class="liveBar"><span>● SYSTEM ONLINE</span><span id="liveClock">--:--:--</span></div>
+  <div class="search">⌕ <input id="search" placeholder="Search products..."></div>
+</section>
+
+<section class="toolbar"><span><b id="resultCount">0</b> products</span>
+<select id="sort"><option value="new">Newest</option><option value="low">Price: Low → High</option><option value="high">Price: High → Low</option></select></section>
+
+<section id="products" class="grid"></section>
+<div id="empty" class="empty" hidden>No products found.</div>
+
+<section class="paymentBox">
+  <p class="tag">PAYMENT & CONTACT</p><h2>Available Options</h2>
+  <div class="optionGrid">
+    <button class="option" onclick="showPayment('gcash')"><strong>💳 GCash</strong><span>QR + 09661821176</span></button><button class="option" onclick="openEmailInquiry()"><strong>📧 Email — CLTX4</strong><span>Prefilled inquiry</span></button>
+    <button class="option" onclick="showPayment('paypal')"><strong>💰 PayPal</strong><span>bracenoclint@gmail.com</span></button>
+    <button class="option" onclick="openLink('https://www.facebook.com/I.Love.Y0U.14')"><strong>💬 Messenger — Clint Pio</strong><span>Open</span></button>
+    <button class="option" onclick="openLink('https://www.facebook.com/profile.php?id=61586812254045')"><strong>💬 Messenger — Cltx Pros</strong><span>Open</span></button>
+    <button class="option" onclick="openLink('https://www.facebook.com/I.Love.Y0U.14')"><strong>📘 Facebook — Clint Pio</strong><span>Open</span></button>
+    <button class="option" onclick="openLink('https://www.facebook.com/profile.php?id=61586812254045')"><strong>📘 Facebook — Cltx Pros</strong><span>Open</span></button>
+    <button class="option" onclick="openLink('https://www.tiktok.com/@cltx4_production')"><strong>🎵 TikTok — CLTX4</strong><span>@cltx4_production</span></button>
+    <button class="option" onclick="alert('Instagram: Clinxk_1\\nSend the Instagram profile URL to make this button clickable.')"><strong>📸 Instagram — Clinxk_1</strong><span>URL pending</span></button>
+  </div>
+  <p class="unavailable">Unavailable: Shopee • TikTok Shop • Lazada (temporarily unavailable)</p>
+</section>
+</main>
+
+<footer><b>CLTX4</b> • Electronics Marketplace<br><small>For legitimate electronics and DIY projects.</small></footer>
+
+<dialog id="productDialog">
+<button class="close" onclick="productDialog.close()">×</button>
+<img id="dImg" alt=""><div class="dialogBody">
+<p id="dCategory" class="tag"></p><h2 id="dName"></h2><div id="dPrice" class="price"></div>
+<p id="dDesc"></p><p id="dStock" class="stock"></p>
+<div class="actions"><button id="inquire" class="primary">💬 Inquiry</button><button id="addBtn" class="secondary">＋ Add to list</button></div>
+</div></dialog>
+
+<dialog id="contactDialog">
+<button class="close" onclick="contactDialog.close()">×</button>
+<div class="dialogBody">
+<p class="tag">CLTX4 INQUIRY</p><h2 id="contactTitle">Choose an option</h2>
+<div class="contactList">
+<button class="option" onclick="showPayment('gcash')"><strong>💳 GCash</strong><span>QR + 09661821176</span></button>
+<button class="option" onclick="showPayment('paypal')"><strong>💰 PayPal</strong><span>bracenoclint@gmail.com</span></button>
+<button class="option" onclick="openLink('https://www.facebook.com/I.Love.Y0U.14')"><strong>💬 Messenger — Clint Pio</strong><span>Open profile</span></button>
+<button class="option" onclick="openLink('https://www.facebook.com/profile.php?id=61586812254045')"><strong>💬 Messenger — Cltx Pros</strong><span>Open profile</span></button>
+<button class="option" onclick="openLink('https://www.facebook.com/I.Love.Y0U.14')"><strong>📘 Facebook — Clint Pio</strong><span>Open profile</span></button>
+<button class="option" onclick="openLink('https://www.facebook.com/profile.php?id=61586812254045')"><strong>📘 Facebook — Cltx Pros</strong><span>Open profile</span></button>
+<button class="option" onclick="openLink('https://www.tiktok.com/@cltx4_production')"><strong>🎵 TikTok — CLTX4</strong><span>@cltx4_production</span></button>
+<button class="option" onclick="alert('Instagram: Clinxk_1 — URL pending')"><strong>📸 Instagram — Clinxk_1</strong><span>URL pending</span></button>
+</div></div></dialog>
+
+<dialog id="paymentDialog"><button class="close" onclick="paymentDialog.close()">×</button><div class="dialogBody" id="paymentBody"></div></dialog>
+<dialog id="cartDialog"><button class="close" onclick="cartDialog.close()">×</button><div class="dialogBody"><p class="tag">INQUIRY LIST</p><h2>Selected items</h2><div id="cartItems"></div><button class="primary" id="cartInquire">💬 Inquiry</button></div></dialog>
+
+<script src="products.js"></script><script src="app.js"></script>
+</body></html>
